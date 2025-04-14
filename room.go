@@ -19,6 +19,16 @@ type room struct {
 	clients map[*client]bool
 }
 
+// newRoom makes a new room
+func newRoom() *room {
+	return &room{
+		forward: make(chan []byte),
+		join:    make(chan *client),
+		leave:   make(chan *client),
+		clients: make(map[*client]bool),
+	}
+}
+
 const (
 	socketBufferSize  = 1024
 	messageBufferSize = 256
@@ -39,7 +49,26 @@ func (r *room) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	r.join <- client
-	defer func() { r.leave <- client}()
+	defer func() { r.leave <- client }()
 	go client.write()
 	client.read()
+}
+
+func (r *room) run() {
+	for {
+		select {
+		case client := <-r.join:
+			// joining
+			r.clients[client] = true
+		case client := <-r.leave:
+			// leaving
+			delete(r.clients, client)
+			close(client.send)
+		case msg := <-r.forward:
+			// forward message to all clients
+			for client := range r.clients {
+				client.send <- msg
+			}
+		}
+	}
 }
