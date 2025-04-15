@@ -44,7 +44,9 @@
 
 ##### Unexported types being returned to users 35
 
-#### Using our new trace package 36
+#### Using our new trace package
+
+N/A
 
 #### Making tracing optional 38
 

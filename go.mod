@@ -1,4 +1,4 @@
-module chat-app
+module github.com/AankTia/chat-app
 
 go 1.23.3
 
