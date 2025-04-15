@@ -74,9 +74,15 @@ N/A
 http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("/path/to/assets/"))))
 ```
 
-...
+### Endpoints with dynamic paths
 
-### Endpoints with dynamic paths 47
+- Pattern matching for the `http` package in the Go standard library isn't the most comprehensive and fully featured implementation out there. For example, Ruby on Rails makes it much easier to have dynamic segments inside the path. You could map the route like this:
+
+    ```"auth/:action/:provider_name"```
+
+    Rails then provides a data map (or dictionary) containing the values that it automatically extracted from the matched path. So if you visit `auth/login/google`, then `params[:provider_name]` would equal `google` and `params[:action]` would equal `login`.
+
+...
 
 ### Getting started with OAuth2 50
 
