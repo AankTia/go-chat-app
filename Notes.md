@@ -84,15 +84,43 @@ http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("/p
 
 - If you need to handle more advanced routing situations, you may want to consider using dedicated packages, such as `goweb`, `pat`, `routes`, or `mux`.
 
+### Getting started with OAuth2
+
+OAuth2 is an open authorization standard designed to allow resource owners to give clients delegated access to private data (such as wall posts or tweets) via an access token exchange handshake. Even if you do not wish to access the private data, OAuth2 is a great option that allows people to sign in using their existing credentials, without exposing those credentials to a third-party site. In this case, we are the third party, and we want to allow our users to sign in using services that support OAuth2.
+
+From a user's point of view, the OAuth2 flow is as follows:
+
+1. The user selects the provider with whom they wish to sign in to the client app.
+2. The user is redirected to the provider's website (with a URL that includes the client app ID) where they are asked to give permission to the client app.
+3. The user signs in from the OAuth2 service provider and accepts the permissions requested by the third-party application.
+4. The user is redirected to the client app with a request code.
+5. In the background, the client app sends the grant code to the provider, who sends back an authentication token.
+6. The client app uses the access token to make authorized requests to the provider,
+   such as to get user information or wall posts.
+
 ...
 
-### Getting started with OAuth2 50
+#### Open source OAuth2 packages
 
-#### Open source OAuth2 packages 50
+##### `gomniauth`
+
+`gomniauth` (see https://github.com/stretchr/gomniauth). An open source Go alternative to Ruby's `omniauth` project, `gomniauth` provides a unified solution to access different OAuth2 services.
+
+Some of the project dependencies of gomniauth are kept in Bazaar repositories, so you'll need to head over to http://wiki.bazaar.canonical.com to download them.
 
 ### Tell the authorization providers about your app
 
+Before we ask an authorization provider to help our users sign in, we must tell them about our application. Most providers have some kind of web tool or console where you can create applications to kick this process off.
+
+In order to identify the client application, we need to create a client ID and secret. Despite the fact that OAuth2 is an open standard, each provider has their own language and mechanism to set things up. Therefore, you will most likely have to play around with the user interface or the documentation to figure it out in each case.
+
+If we host our application on a real domain, we have to create new client
+IDs and secrets or update the appropriate URL fields on our authorization
+providers to ensure that they point to the right place.
+
 ### Implementing external logging in 52
+
+...
 
 #### Logging in 53
 
