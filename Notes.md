@@ -68,6 +68,14 @@ N/A
 
 ### Making a pretty social sign-in page 45
 
+- If you prefer to download and host your own copy of Bootstrap, you can do so. Keep the files in an `assets` folder and add the following call to your `main` function (it uses `http.Handle` to serve the assets via your application):
+
+```go
+http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("/path/to/assets/"))))
+```
+
+...
+
 ### Endpoints with dynamic paths 47
 
 ### Getting started with OAuth2 50
