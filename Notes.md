@@ -49,15 +49,22 @@
 N/A
 
 #### Making tracing optional
-<!-- TODO -->
+
+N/A
 
 #### Clean package APIs 39
 
+- In Go, adding documentation is as simple as adding comments to the line before each item.
+
 ### Summary
+
+N/A
 
 ## Chapter 2: Adding User Accounts 41
 
 ### Handlers all the way down 42
+
+...
 
 ### Making a pretty social sign-in page 45
 
