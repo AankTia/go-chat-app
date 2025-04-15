@@ -1,3 +1,5 @@
+# Go Programming Blueprints (Notes)
+
 ## Chapter 1: Chat Application with Web Sockets
 
 ### A simple web server 10
