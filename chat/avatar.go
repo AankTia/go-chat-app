@@ -4,7 +4,7 @@ import "errors"
 
 // ErrNoAvatar is the error that is returned when
 // the Avatar instance is unable to povide an avatar URL
-var ErrNoAvatarURL = errors.New("chat: Unable to get an avatar URL.")
+var ErrNoAvatarURL = errors.New("chat: Unable to get an avatar URL")
 
 // Avatar represents types capable of representing
 // user profile picture
@@ -37,6 +37,20 @@ func (GravatarAvatar) GetAvatarURL(c *client) (string, error) {
 	if userid, ok := c.userData["userid"]; ok {
 		if useridStr, ok := userid.(string); ok {
 			return "//www.gravatar.com/avatar/" + useridStr, nil
+		}
+	}
+
+	return "", ErrNoAvatarURL
+}
+
+type FileSystemAvatar struct{}
+
+var UseFileSystemAvatar FileSystemAvatar
+
+func (FileSystemAvatar) GetAvatarURL(c *client) (string, error) {
+	if userid, ok := c.userData["userid"]; ok {
+		if useridStr, ok := userid.(string); ok {
+			return "/avatars/" + useridStr + ".jpg", nil
 		}
 	}
 

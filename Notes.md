@@ -174,11 +174,17 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-##### The auth service and the avatar's implementation 74
+##### The auth service and the avatar's implementation
 
-##### Using an implementation 76
+...
 
-##### The Gravatar implementation 78
+##### Using an implementation
+
+...
+
+##### The Gravatar implementation
+
+...
 
 ### Uploading an avatar picture 81
 
