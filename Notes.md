@@ -164,7 +164,9 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-#### Making things prettier 71
+#### Making things prettier
+
+...
 
 ### Implementing Gravatar 73
 
