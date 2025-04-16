@@ -132,7 +132,9 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 ...
 
 
-#### Augmenting messages with additional data
+### Augmenting messages with additional data
+
+...
 
 ### Summary
 
