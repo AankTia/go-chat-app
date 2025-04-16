@@ -138,13 +138,23 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ### Summary
 
-## Chapter 3: Three Ways to Implement Profile Pictures 56
+...
 
-### Avatars from the OAuth2 server 66
+## Chapter 3: Three Ways to Implement Profile Pictures
 
-#### Getting the avatar URL 66
+...
 
-#### Transmitting the avatar URL 67
+### Avatars from the OAuth2 server
+
+...
+
+#### Getting the avatar URL
+
+...
+
+#### Transmitting the avatar URL
+
+...
 
 #### Adding the avatar to the user interface 68
 
