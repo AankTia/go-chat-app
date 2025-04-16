@@ -1,12 +1,6 @@
 package main
 
-import (
-	"crypto/md5"
-	"errors"
-	"fmt"
-	"io"
-	"strings"
-)
+import "errors"
 
 // ErrNoAvatar is the error that is returned when
 // the Avatar instance is unable to povide an avatar URL
@@ -39,7 +33,7 @@ type GravatarAvatar struct{}
 
 var UseGravatar GravatarAvatar
 
-func (GravatarAvatar) GetAvatarURL(c *client) (string, error)  {
+func (GravatarAvatar) GetAvatarURL(c *client) (string, error) {
 	if userid, ok := c.userData["userid"]; ok {
 		if useridStr, ok := userid.(string); ok {
 			return "//www.gravatar.com/avatar/" + useridStr, nil
