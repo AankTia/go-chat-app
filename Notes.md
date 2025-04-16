@@ -186,19 +186,33 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-### Uploading an avatar picture 81
+### Uploading an avatar picture
 
-#### User identification 82
+...
 
-#### An upload form 83
+#### User identification
 
-#### Handling the upload 84
+...
 
-#### Serving the images 86
+#### An upload form
 
-#### The Avatar implementation for local files 87
+...
 
-##### Supporting different file types 89
+#### Handling the upload
+
+...
+
+#### Serving the images
+
+...
+
+#### The Avatar implementation for local files
+
+...
+
+##### Supporting different file types
+
+...
 
 #### Refactoring and optimizing our code 90
 
