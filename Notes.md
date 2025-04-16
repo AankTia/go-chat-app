@@ -118,13 +118,19 @@ If we host our application on a real domain, we have to create new client
 IDs and secrets or update the appropriate URL fields on our authorization
 providers to ensure that they point to the right place.
 
-### Implementing external logging in 52
+### Implementing external logging in
+
+
+#### Logging in
+
+#### Handling the response from the provider
+
+Base64-encoding data ensures it won't contain any special or unpredictable characters, which is useful for situations such as passing data to a URL or storing it in a cookie. Remember that although Base64-encoded data looks encrypted, it is not you can easily decode Base64-encoded data back to the original text with little effort. There are online tools that do this for you.
+
+### Presenting the user data
 
 ...
 
-#### Logging in 53
-
-#### Handling the response from the provider Presenting the user data 58
 
 #### Augmenting messages with additional data
 
