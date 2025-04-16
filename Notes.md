@@ -214,9 +214,13 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-#### Refactoring and optimizing our code 90
+#### Refactoring and optimizing our code
 
-##### Replacing concrete types with interfaces 91
+...
+
+##### Replacing concrete types with interfaces
+
+...
 
 ##### Changing interfaces in a test-driven way 92
 
