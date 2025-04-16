@@ -156,9 +156,13 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-#### Adding the avatar to the user interface 68
+#### Adding the avatar to the user interface
 
-#### Logging out 69
+...
+
+#### Logging out
+
+...
 
 #### Making things prettier 71
 
