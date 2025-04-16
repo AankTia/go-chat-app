@@ -120,7 +120,6 @@ providers to ensure that they point to the right place.
 
 ### Implementing external logging in
 
-
 #### Logging in
 
 #### Handling the response from the provider
@@ -130,7 +129,6 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 ### Presenting the user data
 
 ...
-
 
 ### Augmenting messages with additional data
 
@@ -168,9 +166,13 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-### Implementing Gravatar 73
+### Implementing Gravatar
+
+**Gravatar** is a web service that allows users to upload a single profile picture and associate it with their e-mail address in order to make it available from any website
 
 #### Abstracting the avatar URL process 73
+
+...
 
 ##### The auth service and the avatar's implementation 74
 
