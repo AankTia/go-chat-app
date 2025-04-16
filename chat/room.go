@@ -13,25 +13,32 @@ type room struct {
 	// forward is a channel that holds incoming messages
 	// that should be forwarded to the other client
 	forward chan *message
+
 	// join a channel for clients wishig to join the room.
 	join chan *client
+
 	// leave is a channel for clients whising to leave the room.
 	leave chan *client
+
 	// clients hold all current clients in this room.
 	clients map[*client]bool
-	// tracert will receive trace information of activity
-	// in room
+
+	// tracert will receive trace information of activityin room
 	tracer trace.Tracer
+
+	// avatar is how avatar information will be obtained.
+	avatar Avatar
 }
 
 // newRoom makes a new room
-func newRoom() *room {
+func newRoom(avatar Avatar) *room {
 	return &room{
 		forward: make(chan *message),
 		join:    make(chan *client),
 		leave:   make(chan *client),
 		clients: make(map[*client]bool),
 		tracer:  trace.Off(),
+		avatar:  avatar,
 	}
 }
 

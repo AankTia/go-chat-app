@@ -78,14 +78,15 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		authCookieValue := objx.New(map[string]interface{}{
-			"name": user.Name(),
+			"name":       user.Name(),
 			"avatar_url": user.AvatarURL(), // return the appropriate URL value and store it in our avatar_url field, which we then put into the cookie.
+			"email":      user.Email(),
 		}).MustBase64()
 
 		http.SetCookie(w, &http.Cookie{
-			Name: "auth",
+			Name:  "auth",
 			Value: authCookieValue,
-			Path: "/",
+			Path:  "/",
 		})
 
 		w.Header().Set("Location", "/chat")
