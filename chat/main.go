@@ -73,6 +73,9 @@ func main() {
 	http.Handle("/room", r)
 	http.Handle("/upload", &templateHandler{filename: "upload.html"})
 	http.HandleFunc("/uploader", uploaderHandler)
+	http.Handle("/avatars",
+		http.StripPrefix("/avatars/",
+			http.FileServer(http.Dir("./avataras"))))
 
 	// get the room going
 	go r.run()
