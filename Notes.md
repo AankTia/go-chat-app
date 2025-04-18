@@ -222,7 +222,9 @@ Base64-encoding data ensures it won't contain any special or unpredictable chara
 
 ...
 
-##### Changing interfaces in a test-driven way 92
+##### Changing interfaces in a test-driven way
+
+...
 
 ##### Fixing the existing implementations 94
 

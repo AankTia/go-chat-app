@@ -4,7 +4,6 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
-	"path/filepath"
 	"testing"
 
 	gomniauthtest "github.com/stretchr/gomniauth/test"
@@ -15,13 +14,14 @@ func TestAuthAvatar(t *testing.T) {
 
 	testUser := &gomniauthtest.TestUser{}
 	testUser.On("AvatarURL").Return("", ErrNoAvatarURL)
+
 	testChatUser := &chatUser{User: testUser}
 	url, err := authAvatar.GetAvatarURL(testChatUser)
 	if err != ErrNoAvatarURL {
 		t.Error("AuthAvatar.GetAvatarURL should return ErrNoAvatarURL when no value present")
 	}
 
-	testUrl := "http://url-to-gravatar/"
+	testUrl := "https://gravatar.com/squirrelghostlyf87cf028c3"
 
 	testUser = &gomniauthtest.TestUser{}
 	testChatUser.User = testUser
